@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="w15-4.css">
+</head>
+<body>
+    <div class="main">
+        <div class="extra">
+            <h3>第1張圖</h3>
+            <a class="prev" href="javascript:;"></a>
+            <a class="next" href="javascript:;"></a>
+        </div>
+        <div class="indicator">
+            <ul>
+                <li class="active">
+                    <img src="img/P1.jpg">
+                    <span class="mask"></span>
+                    <span class="border"></span>
+                </li>
+                <li>
+                    <img src="img/P2.jpg">
+                    <span class="mask"></span>
+                    <span class="border"></span>
+                </li>
+                <li>
+                    <img src="img/P3.jpg">
+                    <span class="mask"></span>
+                    <span class="border"></span>
+                </li>
+                <li>
+                    <img src="img/P4.jpg">
+                    <span class="mask"></span>
+                    <span class="border"></span>
+                </li>
+            </ul>
+        </div>
+        <div class="slides">
+            <ul>
+                <li class="active">
+                    <a href="#"><img src="img/P1.jpg" alt=""/></a>
+                </li>
+                <li>
+                    <a href="#"><img src="img/P2.jpg" alt=""/></a>
+                </li>
+                <li>
+                    <a href="#"><img src="img/P3.jpg" alt=""/></a>
+                </li>
+                <li>
+                    <a href="#"><img src="img/P4.jpg" alt=""/></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('load',function(){
+            let indicators =document.querySelectorALL('.indicator li');
+            let extra =document.querySelector('.extra>h3');
+            let slides = document.querySelectorAll('.slides li');
+            let index=0
+            let next=document.querySelector('.extra>.next');
+            let prev=document.querySelector('.extra>.prev');
+            let main=document.querySelector('.main');
+            indicators.forEach(function(ele,i){
+                ele.addEventListener('click',function(){
+                    document.querySelector('.indicator .active').classList.remove('active');
+                    document.querySelector('.indicator .active').classList.remove('active');
+                    ele.classList.add('active')
+                    extra.innerText=`第${i+1}張圖`
+                    document.querySelector('.slides .active').classList.remove('active')
+                    slides[i].classList.add('active')
+                    index=i
+                })
+            })
+            next.addEventListener('click',function(){
+                index++
+                if(index>indicators.length-1){
+                    index=0
+                }
+                indicators[index].click()
+            })
+            prev.addEventListener('click',function(){
+                index--;
+                if(index<0){
+                    index=indicators.length-1
+                }    
+                indicators[index].click()
+            })
+            let timeId=setInterval(function(){
+                next.click()
+            },1000);
+            main.addEventListener('mouseenter',function(){
+                clearInterval(timeId)
+            })
+            main.addEventListener('mouseleave',function(){
+                timeId=setInterval(function(){
+                    next.click()
+                },1000);
+            })
+        })
+    </script>
+</body>
+</html>
