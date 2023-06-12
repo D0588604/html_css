@@ -1,0 +1,175 @@
+body{
+    background-color:darkorchid;
+}
+
+.studentinfo{
+    width: 500px;
+    border-collapse: collapse;
+    margin: 30px auto;
+    font-size: 2em;
+}
+
+.studentinfo td{
+    border: 1px solid black;
+}
+
+.studentinfo tr:nth-child(even){
+    background-color: #669ee8;
+}
+
+.studentinfo tr:nth-child(odd){
+    background-color: #81ccf7;
+}
+
+caption{
+    text-align: center;
+    font-weight: bolder;
+    background-color: #4351e9;
+    color: white;
+    border: 1px solid black;
+}
+
+.box{
+    font-size: 5em;
+    width: 300px;
+    height: 250px;
+    margin: 30px auto;
+    background-color: #e3dbe6;
+    text-align: center;
+    display: none;
+}
+
+@media  screen and (min-width:200px)and (max-width:700px) {
+    .wA{
+        display: block;
+    }
+}
+
+@media  screen and (min-width:501x)and (max-width:700px) {
+    .wB{
+        display: block;
+    }
+}
+
+@media  screen and (min-width:701px)and (max-width:1000px) {
+    .wC{
+        display: block;
+    }
+}
+
+.item{
+    background-color: lightgreen;
+    width: 150px;
+    height: 150px;
+    animation-name: circle;
+    animation-duration: 6s;
+    margin: 20px;
+    animation-iteration-count: infinite;
+    color: white;
+    position: relative;
+    border-radius: 50%;
+}
+
+@keyframes circle{
+    0%{
+        top: 0px;
+        left: 0%;
+        background-color: lightgreen;
+    }
+    25%{
+        top: 50px;
+        left: 25%;
+        background-color: antiquewhite;
+    }
+    50%{
+        top: 0px;
+        left: 50%;
+        background-color: lightgreen;
+    }
+    75%{
+        top: 50px;
+        left: 25%;
+        background-color: antiquewhite;
+    }
+    0%{
+        top: 0px;
+        left: 0%;
+        background-color: lightgreen;
+    }
+}
+
+.container{
+    width: 300px;
+    height: 300px;
+    border: 2px solid black;
+    display: grid;
+    grid-template-rows: repeat(4,1fr);
+    margin: 30px auto;
+}
+
+.bar{
+    display: grid;
+    font-size: 2em;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    color: transparent;
+    transition: background-color 0.5s linear ,color 0.5s linear;
+}
+
+.bar1{
+    background-color: lightcyan;
+}
+
+.bar2{
+    background-color: tomato;
+}
+
+.bar3{
+    background-color: lightskyblue
+}
+
+.bar4{
+    background-color: lightgreen;
+}
+
+.bar:hover{
+    background-color: transparent;
+    color: black;
+}
+
+.button{
+    width: 1000px;
+    height: 1000px;
+    border-radius: 50%;
+    background-color: #81ccf7;
+    margin-right: 30px;
+}
+
+.titleset{
+    background-color: blueviolet;
+    text-align: center;
+    color: black;
+}
+
+ul li{
+    list-style-type: none;
+}
+
+ul li a{
+    text-decoration: none;
+    color:aqua;
+}
+
+li{
+    display: inline;
+}
+
+.to-top{
+   position: fixed; 
+   right: 50px;
+   bottom: 50px;
+   text-decoration: none;
+   background-color: palevioletred;
+   border-radius: 50%;
+}
